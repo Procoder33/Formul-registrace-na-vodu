@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Úvodní stránka</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1a1a1a;
+            color: #eee;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #eee;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-decoration-line: underline;
+        }
+
+        h3 {
+            font-weight: normal;
+        }
+
+        .card {
+            background-color: #2e2e2e;
+            border: 1px solid #444;
+            margin-bottom: 20px;
+            /* Add the following line for the light-gray glow effect */
+            box-shadow: 0 0 10px rgba(211, 211, 211, 0.5);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            color: #eee;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            color: #ccc;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Rozsazení v lodích na vodáckém kurzu 2023 SPŠE Ječná</h1>
+
+        <h2>Seznam účastníků</h2>
+        <div class="row">
+            {% for ucastnik in ucastnici %}
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                    <ul>
+                        {% for ucastnik in ucastnici %}
+                        <li>Jméno: {{ ucastnik['firstname'] }}</li>
+                        <li>Příjmení: {{ ucastnik['lastname']}}</li>
+                        <li>Třída: {{ ucastnik['class']}}</li>
+                        <li>Umí plavat: {{ ucastnik['is_swimmer'] }}</li>
+                        <li>Kamarád v kanoi: {{ ucastnik['friend_name'] }}</li>
+
+                        {% endfor %}
+                    </ul>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+        <button class="btn btn-primary" onclick="window.location.href='/registrace'">Registrovat se zde</button>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

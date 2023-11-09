@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <title>Registrace</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+     #regForm {
+        max-width: 600px;
+        background-color: #2e2e2e;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+        border: 2px solid #444;
+        /* Add the following line for the light-gray glow effect */
+        box-shadow: 0 0 10px rgba(211, 211, 211, 0.5);
+    }
+
+        h1 {
+            text-align: center;
+            color: #eee;
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: 25px;
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+
+        label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 8px;
+            color: #ccc;
+        }
+
+        input,
+        textarea,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        button {
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover,
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        input:focus,
+        textarea:focus,
+        button:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+    </style>
+</head>
+
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrace na vodáckém kurzu 2023 SPŠE Ječná</title>
+</head>
+<body>
+
+    <div class="container">
+        <div id="regForm" class="mx-auto mt-5">
+            <h1>Registrace na vodáckém kurzu 2023 SPŠE Ječná</h1>
+            <form method="POST" name="registrationForm">
+                <fieldset>
+                    <legend class="text-center">Registrační formulář</legend>
+
+                    <div class="form-group">
+                        <label for="firstName">Jméno:</label>
+                        <input id="firstName" name="firstName" type="text" class="form-control" minlength="2" maxlength="20" pattern="[A-Za-z ]+" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Příjmení:</label>
+                        <input id="lastName" name="lastName" type="text" class="form-control" minlength="2" maxlength="20" pattern="[A-Za-z ]+" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="class">Třída:</label>
+                        <input id="class" name="class" type="text" class="form-control" minlength="1" maxlength="10" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Umíte plavat?:</label>
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="is_swimmer" id="ano" value="Ano" required>
+                                <label class="form-check-label" for="ano">Ano</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="is_swimmer" id="ne" value="Ne">
+                                <label class="form-check-label" for="ne">Ne</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="friend_to_go_with">S kým bys chtěl být na lodi?:</label>
+                        <input type="text" id="friend_to_go_with" name="friend_to_go_with" class="form-control" pattern="[A-Za-z ]+" placeholder="Jméno kamaráda...">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Odeslat" class="btn btn-primary">
+                        <button onclick="window.location.href='/ '" class="btn btn-secondary">Storno</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+
+    {% if alert_message %}
+        <script>
+            alert("{{ alert_message }}");
+        </script>
+    {% endif %}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
