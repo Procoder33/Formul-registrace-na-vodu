@@ -77,14 +77,13 @@
                 <div class="card">
                     <div class="card-body">
                     <ul>
-                        {% for ucastnik in ucastnici %}
+
                         <li>Jméno: {{ ucastnik['firstname'] }}</li>
                         <li>Příjmení: {{ ucastnik['lastname']}}</li>
                         <li>Třída: {{ ucastnik['class']}}</li>
                         <li>Umí plavat: {{ ucastnik['is_swimmer'] }}</li>
                         <li>Kamarád v kanoi: {{ ucastnik['friend_name'] }}</li>
 
-                        {% endfor %}
                     </ul>
                     </div>
                 </div>
